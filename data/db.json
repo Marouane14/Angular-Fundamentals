@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Computer1",
+      "price": 5600,
+      "checked": false
+    },
+    {
+      "name": "Samsung S9 plus",
+      "price": 8000,
+      "checked": true,
+      "id": 4
+    },
+    {
+      "name": "Samsung S9 plus",
+      "price": 8000,
+      "checked": false,
+      "id": 5
+    },
+    {
+      "name": "Samsung S9 plus",
+      "price": 8000,
+      "checked": false,
+      "id": 6
+    },
+    {
+      "name": "Printer",
+      "price": 8000,
+      "checked": false,
+      "id": 7
+    },
+    {
+      "name": "Printer",
+      "price": 8000,
+      "checked": false,
+      "id": 8
+    },
+    {
+      "name": "jdoe sodk",
+      "price": "7000",
+      "checked": false,
+      "id": 9
+    }
+  ]
+}
