@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AppStateService } from '../services/app-state.service';
 import { LoadingService } from '../services/loading.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,19 +10,22 @@ import { LoadingService } from '../services/loading.service';
 })
 export class NavbarComponent {
 
-  constructor(public state: AppStateService, public ls:LoadingService){
+
+
+
+  constructor(public state: AppStateService, public ls: LoadingService, private router: Router) {
     // this.ls.isLoading$.subscribe({
     //   next : value =>{
     //     this.isLoading = value;
     //   }
     // });
   }
-  actions: Array<any>=[
-    {title:"Home","route":"/home", icon:"house"},
-    {title:"Products","route":"/products", icon:"shop-window"},
-    {title:"New Product","route":"/newProduct", icon:"plus"}
+  actions: Array<any> = [
+    { title: "Home", "route": "/admin/home", icon: "house" },
+    { title: "Products", "route": "/admin/products", icon: "shop-window" },
+    { title: "New Product", "route": "/admin/newProduct", icon: "plus" }
   ]
-  currentAction:any;
+  currentAction: any;
 
   // public isLoading:boolean = false;
 
@@ -29,9 +33,9 @@ export class NavbarComponent {
 
 
   setCurrentAction(action: any) {
-    this.currentAction=action;
+    this.currentAction = action;
   }
-    // imageURL=""
+  // imageURL=""
   // imageURL1="../assets/pexels-paco-álamo-14982761.jpg";
   // imageURL2="../assets/pexels-oleksandr-p-12944736.jpg"
   // username: string = '';
@@ -45,4 +49,13 @@ export class NavbarComponent {
   //   else
   //   this.imageURL=this.imageURL1;
   // }
+
+
+  login() {
+    this.router.navigateByUrl("/login");
+  }
+  logout() {
+    this.state.authState={};
+    this.router.navigateByUrl("/login");
+  }
 }
